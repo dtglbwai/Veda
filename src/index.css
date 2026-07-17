@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,600&family=Tiro+Devanagari+Sanskrit&family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Crimson Pro", serif;
+  --font-sanskrit: "Tiro Devanagari Sanskrit", serif;
+}
+
+@layer base {
+  body {
+    @apply bg-[#f1e9d2] text-stone-900 min-h-screen font-serif;
+    background-image: radial-gradient(#00000005 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+}
+
+@layer components {
+  .palm-leaf {
+    @apply relative bg-[#fdf2d0] rounded-lg shadow-2xl overflow-hidden flex flex-col transition-all duration-700;
+    border-left: 16px solid #9c4221;
+    border-right: 16px solid #9c4221;
+    min-height: 280px;
+    width: 100%;
+    max-width: 1100px;
+    aspect-ratio: 16 / 4;
+  }
+
+  .spiral-container {
+    @apply absolute top-0 left-0 right-0 h-10 flex justify-between px-20 z-30 pointer-events-none;
+  }
+
+  .spiral-ring {
+    @apply w-1.5 h-12 bg-stone-300/90 rounded-full shadow-md border-x border-white/20 -mt-6;
+    background-image: linear-gradient(90deg, #94a3b8, #f8fafc, #94a3b8);
+  }
+
+  .palm-leaf-texture {
+    @apply absolute inset-0 opacity-10 pointer-events-none;
+    background-image: repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(156, 66, 33, 0.1) 41px);
+  }
+
+  .leaf-punch {
+    @apply absolute top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-[#f1e9d2] shadow-inner z-20;
+    box-shadow: inset 2px 2px 8px rgba(0,0,0,0.2);
+  }
+
+  .sanskrit-text {
+    @apply font-sanskrit text-xl md:text-2xl lg:text-3xl leading-tight font-bold italic text-stone-900 text-center tracking-normal;
+  }
+
+  .english-text {
+    @apply font-serif text-sm md:text-base font-semibold leading-relaxed text-stone-700 text-center px-4 max-w-3xl border-t border-orange-900/10 pt-2;
+  }
+
+  .nav-link {
+    @apply text-xs font-bold uppercase tracking-widest text-stone-500 hover:text-orange-700 transition-colors cursor-pointer pb-1;
+  }
+
+  .nav-link-active {
+    @apply text-orange-700 underline decoration-2 underline-offset-8;
+  }
+}
+

@@ -1,0 +1,6 @@
+{
+  "name": "Granth",
+  "description": "Digital palm-leaf scrolls of ancient Hindu scriptures with Sanskrit verses and English translations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
