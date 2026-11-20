@@ -1,0 +1,76 @@
+{
+  "entities": {
+    "UserProfile": {
+      "collection": "users",
+      "description": "User profile with role, preferences, and timestamps",
+      "fields": {
+        "uid": { "type": "string", "required": true, "description": "Firebase Auth user ID" },
+        "email": { "type": "string", "required": false, "description": "User email address" },
+        "displayName": { "type": "string", "required": false, "description": "Display name" },
+        "photoURL": { "type": "string", "required": false, "description": "Avatar URL" },
+        "role": { "type": "string", "required": true, "description": "User role: scholar, researcher, reader, or admin" },
+        "createdAt": { "type": "timestamp", "required": true, "description": "Account creation time" },
+        "updatedAt": { "type": "timestamp", "required": true, "description": "Profile update time" }
+      }
+    },
+    "SpreadsheetDocument": {
+      "collection": "spreadsheets",
+      "description": "Tabular spreadsheet document stored in Firestore with multi-sheet support",
+      "fields": {
+        "title": { "type": "string", "required": true, "description": "Title of the spreadsheet" },
+        "description": { "type": "string", "required": false, "description": "Summary or purpose of the dataset" },
+        "category": { "type": "string", "required": true, "description": "Category e.g., Ayurveda, Epigraphy, Astronomy, Scriptures, Custom" },
+        "tags": { "type": "array", "required": false, "description": "Keywords or search tags" },
+        "sheets": { "type": "array", "required": true, "description": "List of sheets with name, headers, and rows data" },
+        "rowCount": { "type": "number", "required": true, "description": "Total records count" },
+        "columnCount": { "type": "number", "required": true, "description": "Total columns count" },
+        "createdBy": { "type": "string", "required": true, "description": "Author UID" },
+        "authorName": { "type": "string", "required": false, "description": "Author display name" },
+        "isPublic": { "type": "boolean", "required": true, "description": "Whether accessible by all scholars" },
+        "createdAt": { "type": "timestamp", "required": true, "description": "Creation timestamp" },
+        "updatedAt": { "type": "timestamp", "required": true, "description": "Last updated timestamp" }
+      }
+    },
+    "ScriptureRecord": {
+      "collection": "scripture_records",
+      "description": "Structured verse and manuscript records in cloud database",
+      "fields": {
+        "scriptureId": { "type": "string", "required": true, "description": "Canonical ID of the scripture" },
+        "title": { "type": "string", "required": true, "description": "Scripture or section title" },
+        "chapterOrKanda": { "type": "string", "required": false, "description": "Chapter, Sthana, or Kanda" },
+        "verseNumber": { "type": "string", "required": false, "description": "Verse or Sutra index" },
+        "devanagari": { "type": "string", "required": true, "description": "Devanagari Sanskrit text" },
+        "iast": { "type": "string", "required": false, "description": "IAST romanization" },
+        "translationEnglish": { "type": "string", "required": false, "description": "English translation" },
+        "category": { "type": "string", "required": true, "description": "Corpus category" },
+        "createdBy": { "type": "string", "required": true, "description": "Creator UID" },
+        "createdAt": { "type": "timestamp", "required": true, "description": "Creation timestamp" }
+      }
+    },
+    "ResearchNote": {
+      "collection": "research_notes",
+      "description": "Scholarly field notes, lab annotations, and cross-references",
+      "fields": {
+        "title": { "type": "string", "required": true, "description": "Note title" },
+        "content": { "type": "string", "required": true, "description": "Note text content" },
+        "category": { "type": "string", "required": false, "description": "Research category" },
+        "tags": { "type": "array", "required": false, "description": "Note tags" },
+        "createdBy": { "type": "string", "required": true, "description": "Author UID" },
+        "createdAt": { "type": "timestamp", "required": true, "description": "Creation timestamp" },
+        "updatedAt": { "type": "timestamp", "required": true, "description": "Last modified timestamp" }
+      }
+    },
+    "UserBookmark": {
+      "collection": "bookmarks",
+      "description": "Saved scriptures, e-books, and datasets for quick access",
+      "fields": {
+        "userId": { "type": "string", "required": true, "description": "Owner UID" },
+        "itemType": { "type": "string", "required": true, "description": "scripture, ebook, or spreadsheet" },
+        "itemId": { "type": "string", "required": true, "description": "Target ID" },
+        "itemTitle": { "type": "string", "required": true, "description": "Title of the saved item" },
+        "notes": { "type": "string", "required": false, "description": "User custom notes" },
+        "createdAt": { "type": "timestamp", "required": true, "description": "Bookmark timestamp" }
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // User profiles
+    match /users/{userId} {
+      allow read: if true;
+      allow create, update: if isAuthenticated() && request.auth.uid == userId;
+      allow delete: if false;
+    }
+
+    // Spreadsheets Collection
+    match /spreadsheets/{docId} {
+      allow read: if true; // Public access for reading educational and scholarly datasets
+      allow create: if isAuthenticated();
+      allow update, delete: if isAuthenticated() && (resource.data.createdBy == request.auth.uid || !('createdBy' in resource.data));
+    }
+
+    // Scripture Records Collection
+    match /scripture_records/{docId} {
+      allow read: if true;
+      allow create: if isAuthenticated();
+      allow update, delete: if isAuthenticated() && resource.data.createdBy == request.auth.uid;
+    }
+
+    // Research Notes
+    match /research_notes/{docId} {
+      allow read: if isAuthenticated() && (resource.data.createdBy == request.auth.uid || resource.data.isPublic == true);
+      allow create: if isAuthenticated();
+      allow update, delete: if isAuthenticated() && resource.data.createdBy == request.auth.uid;
+    }
+
+    // Bookmarks
+    match /bookmarks/{docId} {
+      allow read, write: if isAuthenticated() && request.resource.data.userId == request.auth.uid;
+      allow delete: if isAuthenticated() && resource.data.userId == request.auth.uid;
+    }
+
+    // Default fallback
+    match /{document=**} {
+      allow read, write: if isAuthenticated();
+    }
+  }
+}

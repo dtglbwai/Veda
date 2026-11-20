@@ -1,6 +1,6 @@
 {
   "name": "Granth",
-  "description": "Digital palm-leaf scrolls of ancient Hindu scriptures with Sanskrit verses and English translations.",
+  "description": "Agentic AI research intelligence suite with AI-Driven Interactive Sanskrit Learning Skills Studio (Conversational Tutor, Paninian Sentence Doctor, Shloka Anvaya, Karaka Graph, Drills & Certification), Central Sanskrit University (sanskrit.nic.in: UG/PG/B.Tech SKS, Shabda/Dhatu Tools, 12 Campuses, 35-Vol Dictionary), Contemporary Sanatan Researchers & YouTubers (Praveen Mohan, Nilesh Oak, Meenakshi Jain, BeerBiceps TRS, Tarun Bindlish, Rupa Bhaty), Sage Panini, Bhaskaracharya, Aryabhata, Patanjali, 16 Samskaras, 33 Koti Devatas, Pooja Vidhi & Mantras, and Cloud Firestore.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
