@@ -78,7 +78,8 @@ export type NavTab =
   | "hyperquest_studio"
   | "sacred_temple_energy"
   | "gosval_ayurveda_lab"
-  | "sanskrit_llm_studio";
+  | "sanskrit_llm_studio"
+  | "kundalini_yoga";
 
 interface NavbarProps {
   activeTab: NavTab;
@@ -131,6 +132,7 @@ export default function Navbar({ activeTab, setActiveTab, systemStatus }: Navbar
         { id: "sanskar_and_devatas", label: t("nav.sanskar_and_devatas", "16 Sanskars & 33 Devatas"), desc: "16 Shodasha Samskaras, 8 Vasus, 11 Rudras, 12 Adityas & Cosmic Pantheon", icon: Sparkles, badge: "SACRAMENTS" },
         { id: "traditions", label: t("nav.traditions", "Sacred Physics & Traditions"), desc: "Yajna Agni, Vedic Acoustics, Sacred Geometry & Living Shastras", icon: Flame, badge: "PHYSICS" },
         { id: "veda_pathana", label: "Veda Pathana Studio (11 Recitation Methods)", desc: "Samhita, Pada, Krama, Jata, Ghana & Ashta Vikritis • Pandit Dixit Ji Milestone", icon: Volume2, badge: "VEDA PATHANA" },
+        { id: "kundalini_yoga", label: "Kundalini Yoga & Subtle Anatomy", desc: "Chakras, Nadis, Toroidal Field, Asanas, Pranayama, Mudras & Awakening Integration", icon: Sparkles, badge: "KUNDALINI" },
       ]
     },
     {
@@ -193,6 +195,7 @@ export default function Navbar({ activeTab, setActiveTab, systemStatus }: Navbar
   })).filter(group => group.items.length > 0);
 
   const researchTabs: { id: NavTab; label: string; icon: React.ComponentType<{ className?: string }>; desc: string; badge?: string }[] = [
+    { id: "kundalini_yoga", label: "Kundalini Yoga & Subtle Anatomy Compendium", icon: Sparkles, desc: "Shat-Chakra Mechanics, Ida-Pingala-Sushumna Nadis, Esoteric Correspondences, Kriyas & Integration", badge: "KUNDALINI YOGA" },
     { id: "sanskrit_llm_studio", label: "Paninian Sanskrit LLM & Neural Studio", icon: Brain, desc: "Maheswara Tokenizers, 4,000 Ashtadhyayi Rule Engines, Dhatupatha & Karaka Semantic Graph Parsers", badge: "SANSKRIT LLM" },
     { id: "gosval_ayurveda_lab", label: "Shuddha Ayurveda & Dravyaguna Clinical Lab", icon: Leaf, desc: "5-Tool Nadi & Graha Assessment, Panchakarma Detoxification, Chronic Disease Reversal Protocols", badge: "VEDIC HEALING" },
     { id: "sacred_temple_energy", label: "79°E Meridian & Sacred Temple Grid (Bindlish & Bhaty)", icon: Compass, desc: "Kedarnath to Rameshwaram 79°E Line, Chidambaram 21,600 Roof Tiles, 72,000 Nadis & Pancha Bhoota Acoustics", badge: "TEMPLE GRID" },

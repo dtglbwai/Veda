@@ -26,6 +26,140 @@ import {
 } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 
+export interface KundaliHouseSpec {
+  houseNumber: number;
+  hindiTitle: string;
+  englishTitle: string;
+  hindiSummary: string;
+  englishMeaning: string;
+  karakaPlanets: string;
+  bodyPartAndDomain: string;
+  remedyAndReflection: string;
+}
+
+export const KUNDALI_12_HOUSES: KundaliHouseSpec[] = [
+  {
+    houseNumber: 1,
+    hindiTitle: "पहला घर (लग्न)",
+    englishTitle: "1st House · Tanu Bhava (Ascendant)",
+    hindiSummary: "आप कौन हैं? आपका व्यक्तित्व, आपका चेहरा और दुनिया आपको कैसे देखती है।",
+    englishMeaning: "Defines your core self, physical constitution, vitality, temperament, and how the world perceives your aura.",
+    karakaPlanets: "Surya (Sun)",
+    bodyPartAndDomain: "Head, Brain, Personality & Self-Identity",
+    remedyAndReflection: "Offer morning water (Arghya) to the rising Sun and maintain mindful posture and clarity of intention."
+  },
+  {
+    houseNumber: 2,
+    hindiTitle: "दूसरा घर (धन और वाणी)",
+    englishTitle: "2nd House · Dhana Bhava (Wealth & Speech)",
+    hindiSummary: "आपकी जमा पूंजी, आपका बैंक बैलेंस और आपकी बोली हुई वो बातें जो किसी का दिल जीत सकती हैं या दुखा सकती हैं।",
+    englishMeaning: "Governs accumulated assets, family lineage, nourishment, and the constructive or destructive power of Vak (speech).",
+    karakaPlanets: "Brihaspati (Jupiter)",
+    bodyPartAndDomain: "Face, Voice, Throat, Accumulated Savings & Family Values",
+    remedyAndReflection: "Practice Satya-Priya speech (truthful and kind words); honor family elders and avoid harsh speech."
+  },
+  {
+    houseNumber: 3,
+    hindiTitle: "तीसरा घर (साहस और अपने)",
+    englishTitle: "3rd House · Sahaja Bhava (Courage & Siblings)",
+    hindiSummary: "आपके भीतर का दम-खम, आपके छोटे भाई-बहन और आपकी छोटी-छोटी यात्राएं।",
+    englishMeaning: "Reflects willpower (Parakrama), manual skills, communication media, younger siblings, and short purposeful journeys.",
+    karakaPlanets: "Mangal (Mars)",
+    bodyPartAndDomain: "Hands, Shoulders, Ears, Initiative & Siblings",
+    remedyAndReflection: "Maintain cordial bonds with younger siblings and channel restlessness into disciplined creative expression."
+  },
+  {
+    houseNumber: 4,
+    hindiTitle: "चौथा घर (सुख और घर)",
+    englishTitle: "4th House · Sukha Bhava (Home & Mother)",
+    hindiSummary: "आपका घर, आपके दिल का सुकून, आपकी माँ का आंचल और आपकी ज़मीन-जायदाद।",
+    englishMeaning: "Governs emotional peace (Manas-Sukha), maternal nourishment, ancestral homeland, vehicles, and immovable property.",
+    karakaPlanets: "Chandra (Moon) & Shukra (Venus)",
+    bodyPartAndDomain: "Heart, Chest, Lungs, Residence & Maternal Blessings",
+    remedyAndReflection: "Seek your mother's blessings daily and keep the North-East corner of your home clean and clutter-free."
+  },
+  {
+    houseNumber: 5,
+    hindiTitle: "पाँचवाँ घर (प्यार और बुद्धि)",
+    englishTitle: "5th House · Putra & Buddhi Bhava (Intellect & Love)",
+    hindiSummary: "आपकी अकल, आपका पहला प्यार, दिल की धड़कनें और आपकी संतान का सुख।",
+    englishMeaning: "Rules Purva-Punya (past-life merit), creative intelligence, romance, mantra siddhi, and happiness through progeny.",
+    karakaPlanets: "Brihaspati (Jupiter)",
+    bodyPartAndDomain: "Upper Abdomen, Mind-Heart Creative Seat, Education & Progeny",
+    remedyAndReflection: "Chant Gayatri or Ishta Mantra daily; mentor younger students to strengthen creative intelligence."
+  },
+  {
+    houseNumber: 6,
+    hindiTitle: "छठा घर (संघर्ष और सेहत)",
+    englishTitle: "6th House · Ari / Roga Bhava (Health & Obstacles)",
+    hindiSummary: "आपकी बीमारियां, आपके दबे हुए दुश्मन, रोज़मर्रा की उलझनें और कर्ज़ की मार।",
+    englishMeaning: "Tests resilience against acute ailments, hidden adversaries, litigation, daily service routines, and debt repayment.",
+    karakaPlanets: "Mangal (Mars) & Shani (Saturn)",
+    bodyPartAndDomain: "Digestive Tract, Kidneys, Service Routine & Conflict Resolution",
+    remedyAndReflection: "Follow consistent Dinacharya (daily health discipline), clear small debts promptly, and practice selfless Seva."
+  },
+  {
+    houseNumber: 7,
+    hindiTitle: "सातवाँ घर (रिश्ते और जीवनसाथी)",
+    englishTitle: "7th House · Kalatra Bhava (Spouse & Partnerships)",
+    hindiSummary: "आपका जीवनसाथी, शादी का बंधन और बिजनेस की पार्टनरशिप।",
+    englishMeaning: "Represents committed marriage, life partner compatibility, mutual contracts, public diplomacy, and business alliances.",
+    karakaPlanets: "Shukra (Venus)",
+    bodyPartAndDomain: "Lower Back, Pelvic Axis, Marriage & Trade Alliances",
+    remedyAndReflection: "Practice mutual respect and transparent agreements in marriage and business partnerships."
+  },
+  {
+    houseNumber: 8,
+    hindiTitle: "आठवाँ घर (रहस्य और बदलाव)",
+    englishTitle: "8th House · Randhra Bhava (Mysteries & Transformation)",
+    hindiSummary: "जीवन के सबसे बड़े गहरे राज़, अचानक आने वाले बदलाव, आयु और संकट।",
+    englishMeaning: "Governs longevity (Ayus), sudden crises or unearned windfalls, esoteric research, Kundalini awakening, and inner rebirth.",
+    karakaPlanets: "Shani (Saturn)",
+    bodyPartAndDomain: "Longevity, Regenerative Systems, Occult & Deep Psychology",
+    remedyAndReflection: "Recite Maha Mrityunjaya Mantra during turbulent transitions and practice pranayama for equanimity."
+  },
+  {
+    houseNumber: 9,
+    hindiTitle: "नौवाँ घर (भाग्य और धर्म)",
+    englishTitle: "9th House · Dharma & Bhagya Bhava (Fortune & Grace)",
+    hindiSummary: "आपकी किस्मत का सितारा, लंबी यात्राएं, उच्च ज्ञान और गुरु का आशीर्वाद।",
+    englishMeaning: "Seat of highest Dharmic fortune, father and spiritual preceptors (Guru), sacred pilgrimages, and higher philosophy.",
+    karakaPlanets: "Brihaspati (Jupiter) & Surya (Sun)",
+    bodyPartAndDomain: "Hips, Thighs, Higher Philosophy, Pilgrimage & Fortune",
+    remedyAndReflection: "Honor parents and teachers, read uplifting scriptures, and uphold ethical Dharma even when tested."
+  },
+  {
+    houseNumber: 10,
+    hindiTitle: "दसवाँ घर (कर्म और करियर)",
+    englishTitle: "10th House · Karma Bhava (Career & Honor)",
+    hindiSummary: "समाज में आपकी इज़्ज़त, आपका रुतबा, नौकरी, व्यापार और आपका कर्मक्षेत्र।",
+    englishMeaning: "Defines public standing, career mastery, authority, vocation, governance, and tangible worldly achievements.",
+    karakaPlanets: "Surya, Budha, Guru & Shani",
+    bodyPartAndDomain: "Knees, Bones, Public Reputation & Vocation",
+    remedyAndReflection: "Dedicate work as Nishkama Karma (focused excellence without ego-attachment)."
+  },
+  {
+    houseNumber: 11,
+    hindiTitle: "ग्यारहवाँ घर (लाभ और इच्छाएं)",
+    englishTitle: "11th House · Labha Bhava (Gains & Aspirations)",
+    hindiSummary: "आपकी आमदनी, बड़े भाई-बहन, दोस्तों का दायरा और आपके सारे सपने पूरे होने का घर।",
+    englishMeaning: "Governs steady income streams, elder siblings, influential friendships, networks, and fulfillment of long-term desires.",
+    karakaPlanets: "Brihaspati (Jupiter)",
+    bodyPartAndDomain: "Ankles, Calves, Circulation, Income & Social Circle",
+    remedyAndReflection: "Share a portion of earnings in charitable Daan and nurture honest, supportive friendships."
+  },
+  {
+    houseNumber: 12,
+    hindiTitle: "बारहवाँ घर (मोक्ष और एकांत)",
+    englishTitle: "12th House · Vyaya & Moksha Bhava (Liberation & Solitude)",
+    hindiSummary: "आपका खर्चा, अस्पताल के चक्कर, विदेश यात्रा, गहरी नींद और अंततः मुक्ति (मोक्ष)।",
+    englishMeaning: "Oversees expenditures, hospitals, foreign residence, restful sleep (Nidra), meditative solitude, and spiritual liberation.",
+    karakaPlanets: "Shani (Saturn) & Ketu",
+    bodyPartAndDomain: "Feet, Sleep Quality, Foreign Lands & Spiritual Moksha",
+    remedyAndReflection: "Channel expenditures into conscious charity (Daan), protect sleep hygiene, and embrace quiet meditation."
+  }
+];
+
 // 12 Zodiac Signs data with Vedic Astro Vaibhav insights
 export const VEDIC_ZODIAC_SIGNS = [
   {
@@ -269,10 +403,12 @@ export const ANCIENT_ASTRONOMICAL_YANTRAS = [
 export default function VedicAstroKhagolStudio() {
   const { t } = useLanguage();
 
-  // Active Studio Mode: "vedic_astro_vaibhav" vs "khagola_shastra" vs "remedies_lab"
-  const [activeMode, setActiveMode] = useState<"vedic_astro_vaibhav" | "khagola_shastra" | "remedies_lab" | "kundali_calculator">("vedic_astro_vaibhav");
+  // Active Studio Mode: "vedic_astro_vaibhav" vs "khagola_shastra" vs "remedies_lab" vs "kundali_calculator" vs "kundali_12_bhavas"
+  const [activeMode, setActiveMode] = useState<"vedic_astro_vaibhav" | "khagola_shastra" | "remedies_lab" | "kundali_calculator" | "kundali_12_bhavas">("vedic_astro_vaibhav");
   const [selectedRashiId, setSelectedRashiId] = useState<string>("mesha");
   const [selectedYantraId, setSelectedYantraId] = useState<string>("gola_yantra");
+  const [selectedHouseNumber, setSelectedHouseNumber] = useState<number>(1);
+  const [activeUserHouseFocus, setActiveUserHouseFocus] = useState<number>(10);
 
   // Kundali Form State
   const [userDob, setUserDob] = useState("1995-05-15");
@@ -404,7 +540,19 @@ export default function VedicAstroKhagolStudio() {
           }`}
         >
           <Calendar className="w-4 h-4 text-emerald-400" />
-          <span>Janma Kundali & Dasha Calculator</span>
+          <span>Janma Kundali & Dasha</span>
+        </button>
+
+        <button
+          onClick={() => setActiveMode("kundali_12_bhavas")}
+          className={`flex-1 min-w-[140px] px-4 py-3 rounded-xl text-xs font-serif font-bold transition-all flex items-center justify-center gap-2 cursor-pointer border ${
+            activeMode === "kundali_12_bhavas"
+              ? "bg-gradient-to-r from-amber-800 to-amber-950 text-amber-100 border-amber-500 shadow-lg ring-1 ring-amber-500/40"
+              : "bg-transparent text-stone-400 hover:text-white border-transparent"
+          }`}
+        >
+          <Layers className="w-4 h-4 text-purple-400" />
+          <span>12 Kundali Houses (12 भाव)</span>
         </button>
       </div>
 
@@ -805,6 +953,179 @@ export default function VedicAstroKhagolStudio() {
           )}
         </div>
       )}
+
+      {/* ----------------- MODE 5: 12 KUNDALI HOUSES (12 भावों का गहरा रहस्य) ----------------- */}
+      {activeMode === "kundali_12_bhavas" && (() => {
+        const selectedHouse = KUNDALI_12_HOUSES.find((h) => h.houseNumber === selectedHouseNumber) || KUNDALI_12_HOUSES[0];
+        // North Indian Chart House Polygon coordinates in a 300x300 viewBox
+        const northIndianRegions: { house: number; points: string; labelX: number; labelY: number }[] = [
+          { house: 1, points: "150,0 75,75 150,150 225,75", labelX: 150, labelY: 78 },
+          { house: 2, points: "0,0 75,75 150,0", labelX: 75, labelY: 32 },
+          { house: 3, points: "0,0 0,150 75,75", labelX: 30, labelY: 78 },
+          { house: 4, points: "75,75 0,150 75,225 150,150", labelX: 75, labelY: 154 },
+          { house: 5, points: "0,150 0,300 75,225", labelX: 30, labelY: 228 },
+          { house: 6, points: "0,300 75,225 150,300", labelX: 75, labelY: 274 },
+          { house: 7, points: "150,150 75,225 150,300 225,225", labelX: 150, labelY: 228 },
+          { house: 8, points: "150,300 225,225 300,300", labelX: 225, labelY: 274 },
+          { house: 9, points: "225,225 300,300 300,150", labelX: 270, labelY: 228 },
+          { house: 10, points: "150,150 225,225 300,150 225,75", labelX: 225, labelY: 154 },
+          { house: 11, points: "225,75 300,150 300,0", labelX: 270, labelY: 78 },
+          { house: 12, points: "150,0 225,75 300,0", labelX: 225, labelY: 32 }
+        ];
+
+        return (
+          <div className="space-y-6">
+            <div className="bg-[#18130f] border border-amber-900/60 rounded-2xl p-6 space-y-2">
+              <div className="text-xs text-amber-400 font-sans">
+                कुंडली ब्लूप्रिंट · North Indian Bhava Kundali · 12 Life Domains
+              </div>
+              <h2 className="text-2xl font-serif font-bold text-stone-100">
+                जिंदगी के हर राज़ का ताला खोलती है आपकी कुंडली: 12 घरों का गहरा सच
+              </h2>
+              <p className="text-xs md:text-sm text-stone-300 font-sans leading-relaxed max-w-3xl">
+                हमारी कुंडली सिर्फ ग्रहों का खेल नहीं, बल्कि हमारे जीवन का पूरा ब्लूप्रिंट है। नीचे दिए गए कुंडली चक्र में किसी भी घर (1 से 12) पर क्लिक करके उसके जीवन-रहस्य, कारक ग्रह और वैदिक उपाय जानें।
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+              {/* Left: Interactive North-Indian Diamond Chart */}
+              <div className="lg:col-span-5 bg-[#14110e] border border-stone-800 rounded-2xl p-6 flex flex-col justify-between space-y-5">
+                <div className="flex items-center justify-between border-b border-stone-800 pb-3">
+                  <span className="text-sm font-serif font-bold text-amber-200">
+                    Interactive Bhava Chakra (1–12)
+                  </span>
+                  <span className="text-xs font-mono tabular-nums text-stone-400">
+                    Selected: House {selectedHouse.houseNumber}
+                  </span>
+                </div>
+
+                <div className="flex items-center justify-center py-2">
+                  <svg viewBox="0 0 300 300" className="w-full max-w-[320px] h-auto" role="img" aria-label="Interactive 12-House North Indian Kundali Chart">
+                    <rect x="0" y="0" width="300" height="300" fill="#120e0b" stroke="#92400e" strokeWidth="2" />
+                    {northIndianRegions.map((reg) => {
+                      const isSelected = reg.house === selectedHouseNumber;
+                      const isActiveFocus = reg.house === activeUserHouseFocus;
+                      return (
+                        <g
+                          key={reg.house}
+                          onClick={() => setSelectedHouseNumber(reg.house)}
+                          className="cursor-pointer"
+                        >
+                          <polygon
+                            points={reg.points}
+                            fill={isSelected ? "rgba(217, 119, 6, 0.28)" : isActiveFocus ? "rgba(16, 185, 129, 0.14)" : "transparent"}
+                            stroke="#78350f"
+                            strokeWidth="1.2"
+                          />
+                          <text
+                            x={reg.labelX}
+                            y={reg.labelY}
+                            textAnchor="middle"
+                            fill={isSelected ? "#fde68a" : isActiveFocus ? "#6ee7b7" : "#d6d3d1"}
+                            fontSize={isSelected ? "14" : "12"}
+                            fontWeight={isSelected ? "bold" : "normal"}
+                            fontFamily="monospace"
+                          >
+                            {reg.house}
+                          </text>
+                        </g>
+                      );
+                    })}
+                  </svg>
+                </div>
+
+                {/* Personal Active House Check-in */}
+                <div className="pt-3 border-t border-stone-800 space-y-2">
+                  <label htmlFor="active-house-focus" className="block text-xs font-sans text-stone-300">
+                    आपकी कुंडली का कौन सा घर इस वक्त सबसे ज्यादा एक्टिव है?
+                  </label>
+                  <select
+                    id="active-house-focus"
+                    value={activeUserHouseFocus}
+                    onChange={(e) => {
+                      const num = parseInt(e.target.value, 10);
+                      setActiveUserHouseFocus(num);
+                      setSelectedHouseNumber(num);
+                    }}
+                    className="w-full bg-[#0e0b09] border border-stone-700 rounded-xl px-3 py-2 text-xs text-amber-200 font-sans outline-none focus:border-amber-500"
+                  >
+                    {KUNDALI_12_HOUSES.map((h) => (
+                      <option key={h.houseNumber} value={h.houseNumber}>
+                        {h.houseNumber}. {h.hindiTitle} — {h.englishTitle.split("·")[1]?.trim()}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+
+              {/* Right: Detailed House Inspection + Quick 12-House Selector */}
+              <div className="lg:col-span-7 bg-[#18130f] border border-stone-800 rounded-2xl p-6 flex flex-col justify-between space-y-6">
+                <div className="space-y-4">
+                  <div className="flex flex-wrap items-center justify-between gap-2 border-b border-stone-800 pb-4">
+                    <div>
+                      <div className="text-xs font-mono tabular-nums text-amber-400">
+                        Bhava {selectedHouse.houseNumber} of 12 · Karaka: {selectedHouse.karakaPlanets}
+                      </div>
+                      <h3 className="text-2xl font-serif font-bold text-stone-100 mt-1">
+                        {selectedHouse.hindiTitle}
+                      </h3>
+                      <div className="text-xs text-stone-400 font-sans mt-0.5">
+                        {selectedHouse.englishTitle}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="p-4 bg-[#120e0b] border border-stone-800 rounded-xl space-y-2">
+                    <div className="text-xs font-medium text-amber-300 font-sans">मूल जीवन-रहस्य (Core Meaning)</div>
+                    <p className="text-base font-serif text-stone-100 leading-relaxed">
+                      {selectedHouse.hindiSummary}
+                    </p>
+                    <p className="text-xs text-stone-300 font-sans leading-relaxed pt-1">
+                      {selectedHouse.englishMeaning}
+                    </p>
+                  </div>
+
+                  <dl className="divide-y divide-stone-800/80 text-xs font-sans">
+                    <div className="py-2.5 flex justify-between gap-4">
+                      <dt className="text-stone-400">Body & Domain Mapping</dt>
+                      <dd className="text-stone-200 text-right">{selectedHouse.bodyPartAndDomain}</dd>
+                    </div>
+                    <div className="py-2.5 flex justify-between gap-4">
+                      <dt className="text-stone-400">Significator (Karaka)</dt>
+                      <dd className="text-amber-300 text-right">{selectedHouse.karakaPlanets}</dd>
+                    </div>
+                    <div className="py-2.5 space-y-1">
+                      <dt className="text-stone-400">Practical Alignment & Remedy</dt>
+                      <dd className="text-stone-200 leading-relaxed">{selectedHouse.remedyAndReflection}</dd>
+                    </div>
+                  </dl>
+                </div>
+
+                {/* Compact 12-House Grid Buttons */}
+                <div className="pt-3 border-t border-stone-800 space-y-2">
+                  <div className="text-xs text-stone-400 font-sans">Jump to any of the 12 Bhavas:</div>
+                  <div className="grid grid-cols-3 sm:grid-cols-4 gap-1.5">
+                    {KUNDALI_12_HOUSES.map((h) => (
+                      <button
+                        key={h.houseNumber}
+                        onClick={() => setSelectedHouseNumber(h.houseNumber)}
+                        className={`px-2.5 py-2 rounded-lg text-left text-[11px] font-sans transition-colors cursor-pointer truncate border ${
+                          selectedHouseNumber === h.houseNumber
+                            ? "bg-amber-900/90 border-amber-500 text-amber-100 font-semibold"
+                            : "bg-[#120e0b] border-stone-800 text-stone-300 hover:border-stone-600"
+                        }`}
+                      >
+                        <span className="font-mono tabular-nums text-amber-400 mr-1">{h.houseNumber}.</span>
+                        {h.hindiTitle.replace(/पहला |दूसरा |तीसरा |चौथा |पाँचवाँ |छठा |सातवाँ |आठवाँ |नौवाँ |दसवाँ |ग्यारहवाँ |बारहवाँ /, "")}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      })()}
     </div>
   );
 }

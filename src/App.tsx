@@ -51,6 +51,7 @@ import HyperQuestStudio from "./components/HyperQuestStudio";
 import SacredTempleEnergyStudio from "./components/SacredTempleEnergyStudio";
 import GosvalAyurvedaStudio from "./components/GosvalAyurvedaStudio";
 import SanskritLLMStudio from "./components/SanskritLLMStudio";
+import KundaliniYogaStudio from "./components/KundaliniYogaStudio";
 import LanguageSelectorModal from "./components/LanguageSelectorModal";
 import { LanguageProvider, useLanguage } from "./context/LanguageContext";
 import { FirebaseProvider } from "./context/FirebaseContext";
@@ -356,6 +357,19 @@ function MainAppContent() {
               transition={{ duration: 0.2 }}
             >
               <SanskritLLMStudio />
+            </motion.div>
+          )}
+
+          {/* 1A-2.999. KUNDALINI YOGA & SUBTLE ANATOMY COMPENDIUM */}
+          {activeTab === "kundalini_yoga" && (
+            <motion.div
+              key="kundalini_yoga"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.2 }}
+            >
+              <KundaliniYogaStudio />
             </motion.div>
           )}
 
