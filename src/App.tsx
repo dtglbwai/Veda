@@ -709,13 +709,19 @@ function MainAppContent() {
             <span>{currentLanguageMeta.flag} {currentLanguageMeta.name} ({currentScript})</span>
           </button>
 
-          <span className="text-stone-700 hidden sm:inline">|</span>
-          <span className="text-[11px] font-mono text-stone-500 hidden sm:inline">
-            Granth • Indic Scripture Sanctuary & Archaeo-Science Matrix
+          <span className="text-stone-700 hidden sm:inline">·</span>
+          <span className="text-[11px] font-mono text-stone-400 hidden sm:inline">
+            Granth · Ownership ID: <span className="text-amber-300 font-semibold">SGSR14061977820DLVR</span> ·{" "}
+            <a href="mailto:dtglbw@gmail.com" className="text-stone-300 hover:text-amber-300 underline decoration-stone-700 underline-offset-2">
+              dtglbw@gmail.com
+            </a>
           </span>
         </div>
 
-        <div className="flex items-center gap-4 text-[11px] font-serif italic text-amber-300/80">
+        <div className="flex flex-wrap items-center gap-3 text-[11px] font-serif italic text-amber-300/80">
+          <span className="sm:hidden font-mono not-italic text-stone-400">
+            SGSR14061977820DLVR · <a href="mailto:dtglbw@gmail.com" className="underline">dtglbw@gmail.com</a>
+          </span>
           <span>{transliterate("ॐ असतो मा सद्गमय । तमसो मा ज्योतिर्गमय । मृत्योर्माऽमृतं गमय ॥")}</span>
         </div>
       </footer>
